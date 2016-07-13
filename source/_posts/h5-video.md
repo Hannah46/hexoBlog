@@ -1,7 +1,7 @@
 ---
 title: H5中的video标签
 date: 2016-05-10 22:58:05
-tags: HTML5
+tags: HTML5 javascript
 ---
 
 ## 格式问题
