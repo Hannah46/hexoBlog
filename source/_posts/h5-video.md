@@ -15,6 +15,8 @@ video标签能够支持的格式有限，通常为mp4, webm, ogg这三种视频�
 
 如果视频加载成功，video自带的封面图会根据视频的宽高进行缩放，如果视频加载失败，则会根据图片的尺寸显示出播放区域
 
+<!-- more -->
+
 ![correct show](http://ww3.sinaimg.cn/large/59967359gw1f3pcdlp82bj20ae06amxq.jpg)
 
 ![wrong show](http://ww1.sinaimg.cn/large/59967359gw1f3pce5av9ej20an0agabf.jpg)

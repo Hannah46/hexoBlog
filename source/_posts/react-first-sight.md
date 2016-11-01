@@ -1,6 +1,6 @@
 ---
 title: React初体验
-tags: javascript React 
+tags: javascript React
 ---
 
 ### components are just state machines
@@ -15,6 +15,8 @@ ownership：props和state是根据这种关系来传递数值，如果一个comp
 </Parent>
 ```
 在这种关系里，parent可以通过this.props.children来获取children 的 prop，也可以用 React.Children的相关操作对children进行操作
+
+<!-- more -->
 
 ### react dom操作的方式
 react在操作dom上充分考虑了性能上的优化，比如

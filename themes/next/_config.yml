@@ -61,8 +61,8 @@ menu_icons:
 
 # Schemes
 #scheme: Muse
-scheme: Mist
-#scheme: Pisces
+#scheme: Mist
+scheme: Pisces
 
 
 # ---------------------------------------------------------------
@@ -142,7 +142,7 @@ social_icons:
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.jpg
 # in site  directory(source/uploads): /uploads/avatar.jpg
-#avatar:
+avatar: http://ww1.sinaimg.cn/large/59967359gw1f9cd8wwvbtj208v0a0gln.jpg
 
 
 # Table Of Contents in the Sidebar

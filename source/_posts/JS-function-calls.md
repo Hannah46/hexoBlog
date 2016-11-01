@@ -20,6 +20,8 @@ JS中函数调用时会接收两个参数，this & arguments，有4种调用方�
 
 ![call2 result](http://ww3.sinaimg.cn/large/59967359gw1f3hcbpxgjrj20840443z5.jpg)
 
+<!-- more -->
+
 ## 构造函数模式
 用new func()的方式来调用函数，实际是创建了一个连接到该函数的prototype成员的新对象。这里的this是函数自己。
 
