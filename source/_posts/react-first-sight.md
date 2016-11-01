@@ -151,3 +151,45 @@ var inputRect = input.getBoundingClientRect();
 注意：ref不要使用在render方法中
   ref其实指向的是backing instance，所以不能给stateless的组件标记ref，因为stateless不存在backing instance
 
+### tips
+1、尽量不要在getInitialState中使用this.props  
+如果这样，可能会导致render中的this.state还没有拿到getInitialState中的值，导致数据不一致   
+最佳做法是直接在render中调用this.props，而不要 使用this.state   
+``` bash
+// bad
+var MessageBox = React.createClass({
+     getInitialState:function(){
+          return{ nameWithQualifier:'Mr. '+this.props.name};
+     },
+     render:function(){
+          return <div>{ this.state.nameWithQualifier}</div>;
+     }
+});
+ReactDOM.render(<MessageBoxname="Rogers"/>,mountNode);
+// better
+var MessageBox = React.createClass({
+     render:function(){
+          return <div>{ 'Mr. '+this.props.name }</div>;
+     }
+});
+ReactDOM.render(<MessageBoxname="Rogers"/>,mountNode);
+```
+2、this.props.children       当有多个子组件时，会返回一个array，但当只有一个的时候，不会是一个array    
+3、如果在初始化组件时，是通过ajax请求拿到的数据，要在组件unmount的时候终止所有的请求    
+``` bash
+componentDidMount: function() {
+     this.serverRequest=$.get(this.props.source,function(result){
+          var lastGist=result[0];
+          this.setState({
+               username:lastGist.owner.login,
+               lastGistUrl:lastGist.html_url
+          });
+     }.bind(this));
+},
+componentWillUnmount:function(){
+     this.serverRequest.abort();
+},
+```
+4、通过给子元素指定ref，可以直接在父元素中通过this.refs.(ref的值)取到子元素，然后直接调用子元素中的方法    
+![](http://ww3.sinaimg.cn/large/59967359gw1f802xei8ozj20xo0aktay.jpg)
+![](http://ww2.sinaimg.cn/large/59967359gw1f802xojycyj20z20usafs.jpg)
