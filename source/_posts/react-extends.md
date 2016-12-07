@@ -8,12 +8,13 @@ tags: javascript React
 针对自定义组件，有些场景会使用父子组件的模式，有些场景会使用继承的模式，很多场景两者都可以实现，但是选择使用时，仍然有偏好。
 比如下面这两个页面    
 ![页面1](http://ww1.sinaimg.cn/large/59967359gw1fa9xso3cdnj21kw0tv77y.jpg)
+
+<!-- more -->
+
 ![页面2](http://ww2.sinaimg.cn/large/59967359gw1fa9xtczwqxj21kw0ucn1u.jpg)
 这两个页面公用相同的接口，只是页面的标题和item的初始化数组不同，拆分页面可以把页面分为图中的几个部分    
 ![页面结构](http://ww3.sinaimg.cn/large/59967359gw1fa9y7zwo40j21kw0tvth1.jpg)
 比较明确的是需要将item元祖抽离成一个组件，但页面主体的items可以通过通用组件的方式实现，也可以通过extends基类的方式实现。   
-
-<!-- more -->
 
 首先讲一下两种方法的具体实现过程
 ### 通用组件方式
