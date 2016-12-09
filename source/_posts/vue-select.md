@@ -1,5 +1,6 @@
 ---
 title: 使用vue2.0编写的一个下拉框组件
+date: 2016-11-17 14:30:14
 tags: javascript vue
 ---
 
