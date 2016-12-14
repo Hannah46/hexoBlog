@@ -109,8 +109,8 @@ app.bundle.js  91.6 kB       0  [emitted]  main
 ![entry中调用](http://ww2.sinaimg.cn/large/59967359gw1fakl0oer1oj20e906ldgt.jpg)
 
 ### loader扩展
-在上面的例子中，已经使用了一个babel-loader，其实还有很多非常常用的loader，比如处理css和各种静态资源的loader
-1.处理css
+在上面的例子中，已经使用了一个babel-loader，其实还有很多非常常用的loader，比如处理css和各种静态资源的loader 
+1. 处理css
 在项目中添加一个style.css的文件
 ``` javascript
 body {
@@ -136,8 +136,29 @@ module: {
   	}]
   }
 ```
-这里注意要npm安装对应的loader
+这里的style和css实际上对应的是style-loader和css-loader，!表示链式载入loader处理    
+注意要npm安装对应的loader
 ``` bash
 npm install --save style-loader
 npm install --save css-loader
 ```
+如果我们使用的是less或者sass类似的css预处理器，只需要在链式中加入相应的loader，例如：
+``` javascript
+{ test: /\.less$/, loader: 'style!css!less' }  //这里添加了一个less-loader
+```
+    
+2.处理图片及其他静态资源
+一般有url-loader和file-loader两种
+``` javascript
+{
+  test: /\.(png|jpg)$/,
+  loader: "file?name=[path][name].[ext]!./image.png"
+}
+```
+``` javascript
+{
+  test: /\.(png|jpg)$/,
+  loader: "url-loader?limit=8192"
+}
+```
+url-loader可以认为是file-loader的封装
