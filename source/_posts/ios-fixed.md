@@ -5,7 +5,7 @@ tags: 移动端
 ---
 
 这两天在做一个活动页，页面中有一个fixed布局的底部banner和一个input，点击input唤起软键盘进行输入。但开发过程中发现，当软键盘被唤起时，会出现fixed布局的banner出现在页面的中部，而不是按照fixed的表现紧贴在软键盘上部，同时滑动下部的页面，banner也会跟着滑动，也就是说fixed布局失效了      
-查阅了一些资料以后发现，ios下确实存在这个问题，android下不会出现，确实ios在处理fixed布局上存在问题，[百度efe的这篇文章]: http://efe.baidu.com/blog/mobile-fixed-layout/ 里也提到，不只是type=text的input，其他会唤起软键盘的元素(时间日期选择、select选择等)，都会出现同样的问题。   
+查阅了一些资料以后发现，ios下确实存在这个问题，android下不会出现，确实ios在处理fixed布局上存在问题，[百度efe的这篇文章](http://efe.baidu.com/blog/mobile-fixed-layout/) 里也提到，不只是type=text的input，其他会唤起软键盘的元素(时间日期选择、select选择等)，都会出现同样的问题。   
 主要的解决方案如下：    
 #### 方案1: 在唤起软键盘时，隐藏所有fixed的元素    
 分别监听focus和blur事件，在唤起软键盘的情况下隐藏fixed元素  
