@@ -78,3 +78,9 @@ main .content {
 这样就可以实现main的内部内容滚动，fixed元素不会跟随滚动，软键盘也不会影响到fixed布局    
 #### 方案3: 适用iScroll
 这是一个第三方的库，适用方法之后再补充
+
+
+### 参考资料：
+- http://efe.baidu.com/blog/mobile-fixed-layout/
+- http://www.jianshu.com/p/7bf0b791060d
+- https://github.com/maxzhang/maxzhang.github.com/issues/2
